@@ -9,7 +9,16 @@ public class GUI {
 
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame();
+        Links game = new Links();
+        GUI gui = new GUI();
+        gui.textArea1.setText(game.body);
+        JFrame frame = new JFrame("MVC");
+        frame.setContentPane(gui.textArea1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
+}
 
     }
 }
