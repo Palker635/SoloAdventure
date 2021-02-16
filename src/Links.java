@@ -39,12 +39,13 @@ public class Links {
             // Loop through the result set and print
             while (rset.next()) {
                 body = rset.getString("body");
+                System.out.println(body);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        strSelect = "select description, target_Id from links where story_Id = " + currentRoom;
+        strSelect = "select description, targetId from links where storyId = " + currentRoom;
 
         try {
             rset = stmt.executeQuery(strSelect);
@@ -52,28 +53,23 @@ public class Links {
             e.printStackTrace();
         }
         // Loop through the result set and print
-        while (true) {
-            try {
-                if (!rset.next()) break;
-            } catch (SQLException e) {
-                e.printStackTrace();
+        try {
+           if (rset.next()) {
+                alternative1 = rset.getString("description");
+                target1 = rset.getInt("targetId");
             }
-            String description = null;
-            try {
-                description = rset.getString("description");
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            int storyLink = 0;
-            try {
-                storyLink = rset.getInt("target_Id");
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            storyLinks.add(storyLink);
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
 
+        try {
+            if (rset.next()) {
+                alternative2 = rset.getString("description");
+                target2 = rset.getInt("targetId");
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
         }
 
     }
-
 }

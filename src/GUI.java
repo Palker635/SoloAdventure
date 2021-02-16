@@ -1,24 +1,26 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GUI {
     private JTextArea textArea1;
-    private JTextArea textArea2;
     private JButton button1;
     private JButton button2;
-    private JTextArea textArea3;
+    private JPanel mainPanel;
 
 
-    public static void main(String[] args) {
-        Links game = new Links();
-        GUI gui = new GUI();
-        gui.textArea1.setText(game.body);
-        JFrame frame = new JFrame("MVC");
-        frame.setContentPane(gui.textArea1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-    }
-}
+    public GUI() {
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
 
+            }
+        });
+        button2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        });
     }
 }
