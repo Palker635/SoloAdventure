@@ -11,6 +11,7 @@ public class Links {
     int target2;
     int currentRoom;
 
+
     public Links() {
         currentRoom = 1;
         try {
@@ -22,7 +23,6 @@ public class Links {
             e.printStackTrace();
         }
 
-        // Setup statement
         try {
             stmt = conn.createStatement();
         } catch (SQLException e) {
@@ -39,7 +39,6 @@ public class Links {
             // Loop through the result set and print
             while (rset.next()) {
                 body = rset.getString("body");
-                System.out.println(body);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -52,24 +51,23 @@ public class Links {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        // Loop through the result set and print
+        // Description 1
         try {
-           if (rset.next()) {
+            if (rset.next()){
                 alternative1 = rset.getString("description");
                 target1 = rset.getInt("targetId");
             }
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        // Description 2
         try {
-            if (rset.next()) {
+            if (rset.next()){
                 alternative2 = rset.getString("description");
                 target2 = rset.getInt("targetId");
             }
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 }
