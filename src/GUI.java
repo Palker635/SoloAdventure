@@ -22,4 +22,5 @@ public class GUI {
     public JButton getButton2() {
         return button2;
     }
+
 }

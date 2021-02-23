@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class Controller {
     Links game;
@@ -24,6 +26,9 @@ public class Controller {
                 @Override
                 public void actionPerformed(ActionEvent actionEvent) {
                 game.currentRoom = game.target1;
+
+                //Exempel: gui.setBody(adventure.getBody());
+                // textArea1.setText(?);
                 }
             });
                     gui.getButton2().addActionListener(new ActionListener() {
@@ -37,4 +42,11 @@ public class Controller {
     public static void main(String[] args) {
         Controller main = new Controller();
         }
+
+    public void updatebody() {
+
+
+
+    }
+
     }
